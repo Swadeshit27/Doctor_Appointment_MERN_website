@@ -15,13 +15,16 @@ const Doctors = () => {
         DoctorsList();
     }, [])
     return (
-        <div className="container">
-            <h1 className='text-center text-capitalize my-5'>Meet our best doctors</h1>
-            <div className="row">
+        <div className="container text-center">
+            <h1 className='text-center text-capitalize my-5 fw-bolder'>Meet our best doctors</h1>
+            <div className="row ms-sm-auto mb-5">
                 {doctorsLi !== [] ? doctorsLi.map((val) => {
             
                     return (
-                        <div className='col-12 col-md-6 col-lg-4 col-xl-3 mb-5' key={val._id} >
+
+                        <div className='col-12 col-md-6  col-lg-4 col-xl-3 col-sm-12 mb-5 ms-sm-auto d-flex justify-content-center' key={val._id} >
+                     
+
                             <Card data={val} />
                         </div>
                     )

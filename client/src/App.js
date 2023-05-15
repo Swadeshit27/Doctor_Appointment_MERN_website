@@ -1,4 +1,4 @@
-// import "./App.css";
+import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 // import "../node_modules/bootstrap-dark-5/dist/css/bootstrap.min.css"
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle"
@@ -19,7 +19,7 @@ import Myappoitment from "./screens/Myappoitment";
 
 export default function App() {
   return (
-    <>
+    <
       <ContextReducer>
         <Navbar />
         <div className="container-fluid">
@@ -32,8 +32,6 @@ export default function App() {
             <Route exact path="/aboutuser" element={<UserDetails />} />
             <Route exact path="/book" element={<Booking />} />
             <Route exact path="/myappoitment" element={<Myappoitment />} />
-
-
           </Routes>
         </div>
         <Footer />
