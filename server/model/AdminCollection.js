@@ -29,6 +29,10 @@ const DoctorSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    fee: {
+        type: Number,
+        required: true,
+    },
     time: {
         type: String,
         required: true,
