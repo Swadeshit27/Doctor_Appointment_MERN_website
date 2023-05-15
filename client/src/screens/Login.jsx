@@ -33,32 +33,29 @@ const Login = () => {
   }
   return (
     <>
-      <div className="container-fluid main">
+      <div className="main_header picsign">
         <div className="row">
-          <div className="col-md-10 col-12 mx-auto">
-            <div className="row">
-              {/* <!-- for right part --> */}
-              <div className="col-md-6 col-12 main_right">
-                <img src="/images/log-in.svg" className="img-fluid home_img" alt="..." />
-              </div>
-              {/* <!-- for left part --> */}
-              <div className="col-md-6 col-12 main_left login_container">
-                <h1>welcome back</h1>
+            <div className="totallog">
+              <div className="form-box">
+                <h2>Sign in</h2>
                 <form>
-                  <div className="mb-3">
-                    <label htmlFor="">Email Address</label>
-                    <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} value={email} id="email" placeholder="please enter your email*" autoComplete='off' />
+                  <div className="input-box">
+                  <span className="icon"><i className="bi bi-envelope-fill"></i></span>
+                  <input type="email" name="email" className="text-input" onChange={(e) => setEmail(e.target.value)} value={email} id="email" placeholder="please enter your email" autoComplete='off' required />
+                    <label htmlFor="" className="label">Email*</label>
                   </div>
-                  <div className="mb-3">
-                    <label htmlFor="">Password</label>
-                    <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} value={password} id="password" placeholder="please enter your password*" autoComplete='off' />
+                  <div className="input-box">
+                  <span className="icon"><i className="bi bi-lock-fill"></i></span>
+                  <input type="password" className="text-input" name="password" onChange={(e) => setPassword(e.target.value)} value={password} id="password" placeholder="please enter your password" autoComplete='off' required />
+                    <label htmlFor="" className="label">Password*</label>
+                    
                   </div>
-                  <button type="submit" onClick={loginUser}>Submit</button>
-                  <button><Link to="/signup" style={{ "color": "#fff" }}>Create Account</Link></button>
+                  <button type="submit" onClick={loginUser} className='loginbutton'>Submit</button>
+                  <Link to="/signup" style={{ "color": "#fff" }}><button className='loginbutton'>Create Account</button></Link>
                 </form>
               </div>
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </>

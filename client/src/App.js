@@ -1,4 +1,4 @@
-// import "./App.css";
+import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 // import "../node_modules/bootstrap-dark-5/dist/css/bootstrap.min.css"
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle"
@@ -17,7 +17,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <div className="container-fluid">
+      <div className="container-fluid bodycol">
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />

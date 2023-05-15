@@ -34,51 +34,57 @@ const Signup = () => {
 
     return (
         <>
-            <div className="container-fluid main">
+            <div className="main_header picsign">
                 <div className="row">
-                    <div className="col-md-10 col-12 mx-auto">
-                        <div className="row">
-                            {/* <!-- for right part --> */}
-                            <div className="col-md-6 col-12 main_right">
-                                <img src="images/Sign up-rafiki.svg" className="img-fluid home_img" alt="signup" />
-                            </div>
-                            {/* <!-- for left part --> */}
-                            <div className="col-md-6 col-12 main_left login_container">
-                                <h1>Create Account</h1>
+                        <div className="totallog2">
+                            <div className="form-box">
+                                <h2>Create Account</h2>
                                 <form>
-                                    <div className="mb-3">
-                                        <label htmlFor='name'>Name</label>
-                                        <input type="text" name="name" id="name" value={user.name} onChange={addData} autoComplete='off'
-                                            placeholder="please enter your name*" />
+                                    <div className="input-box2 input-box">
+                                    <span className="icon"><i class="bi bi-person-fill"></i></span>
+                                    <input type="text" className="text-input" name="name" id="name" value={user.name} onChange={addData} autoComplete='off'
+                                            placeholder="please enter your name" required />
+                                        <label htmlFor='name' className="label">Full Name*</label>
+                                        
                                     </div>
 
-                                    <div className="mb-3">
-                                        <label htmlFor='email'>Email Address</label>
-                                        <input type="email" name="email" id="email" value={user.email} onChange={addData} autoComplete='off' placeholder="please enter your email*" />
+                                    <div className="input-box2 input-box">
+                                    <span className="icon"><i className="bi bi-envelope-fill"></i></span>
+                                    <input type="email" className="text-input" name="email" id="email" value={user.email} onChange={addData} autoComplete='off' placeholder="please enter your email" required/>
+                                        <label htmlFor='email' className="label">Email*</label>
+                                        
                                     </div>
-                                    <div className="mb-3">
-                                        <label htmlFor='mobile'>Mobile No</label>
-                                        <input type="number" name="mobile" id="mobile" value={user.mobile} onChange={addData} autoComplete='off'
-                                            placeholder="please enter your mobile no*" />
+                                    <div className="input-box2 input-box">
+                                    <span className="icon"><i class="bi bi-telephone-fill"></i></span>
+                                    <input type="number" className="text-input" name="mobile" id="mobile" value={user.mobile} onChange={addData} autoComplete='off'
+                                            placeholder="please enter your mobile no" required/>
+                                        <label htmlFor='mobile' className="label">Mobile No*</label>
+                                        
                                     </div>                              
-                                    <div className="mb-3">
-                                        <label htmlFor='password'>Password</label>
-                                        <input type="password" name="password" id="password" value={user.password} onChange={addData} autoComplete='off'
-                                            placeholder="please enter your password*" />
+                                    <div className="input-box2 input-box">
+                                    <span className="icon"><i class="bi bi-lock-fill"></i></span>
+                                        
+                                        <input type="password" className="text-input" name="password" id="password" value={user.password} onChange={addData} autoComplete='off'
+                                            placeholder="please enter your password" required/>
+                                            <label htmlFor='password' className="label">Password*</label>
+                                            
                                     </div>
-                                    <div className="mb-3">
-                                        <label htmlFor='cpassword'>Confirm Password</label>
-                                        <input type="password" name="cpassword" id="cpassword" value={user.cpassword} onChange={addData} autoComplete='off'
-                                            placeholder="confirm password*" />
+                                    <div className="input-box2 input-box">
+                                        <span className="icon"><i class="bi bi-lock-fill"></i></span>
+                                        
+                                        <input type="password" className="text-input" name="cpassword" id="cpassword" value={user.cpassword} onChange={addData} autoComplete='off'
+                                            placeholder="confirm password" required/>
+                                            <label htmlFor='cpassword' className="label">Confirm Password*</label>
                                     </div>
-                                    <h3>Already have an account ? <Link to="/login" >Log In</Link></h3>
-                                    <button type="submit" value="signup" onClick={signupUser}>Submit</button>
+                                    <button type="submit" value="signup" onClick={signupUser} className='loginbutton'>Submit</button>
+                                    <h3 className='alhaa'>Already have an account ? <Link to="/login" >Log In</Link></h3>
+                                    
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </>
     )
 }
