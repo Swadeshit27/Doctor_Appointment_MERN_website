@@ -18,6 +18,12 @@ async function run() {
             if (err) console.log(err);
             else console.log(e)
         })
+        const patientdatas = db.collection('patientdatas');
+        // const Foodcatagory = db.collection('FoodCatagory');
+        global.patientdatas = await patientdatas.find().toArray(function (err, e) {
+            if (err) console.log(err);
+            else console.log(e)
+        })
         // console.log(global.doctors)
         // global.foodcatagory = await Foodcatagory.find().toArray(function (err, e) {
         //     if (err) console.log(err);

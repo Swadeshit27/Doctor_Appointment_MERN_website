@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
-import Badge from 'react-bootstrap/Badge';
-import Avatar from '@mui/material/Avatar';
+// import Badge from 'react-bootstrap/Badge';
+// import Avatar from '@mui/material/Avatar';
 
 
 const Navbar = () => {
@@ -21,12 +21,23 @@ const Navbar = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <Link className="nav-link fs-4 fw-semibold active text-warning" aria-current="page" to="/">Home</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link fs-4 fw-semibold active text-warning" aria-current="page" to="/doctors">Doctors</Link>
-                            </li>
+                            {!localStorage.getItem("token") ?
+                                <li className="nav-item">
+                                    <Link className="nav-link fs-4 fw-semibold active text-warning" aria-current="page" to="/">Home</Link>
+                                </li>
+
+                                : <>
+                                    <li className="nav-item">
+                                        <Link className="nav-link fs-4 fw-semibold active text-warning" aria-current="page" to="/">Home</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link fs-4 fw-semibold active text-warning" aria-current="page" to="/doctors">Doctors</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link fs-4 fw-semibold active text-warning" aria-current="page" to="/myappoitment">My appoitment</Link>
+                                    </li>
+                                </>
+                            }
                         </ul>
                         {!localStorage.getItem("token") ?
                             <div className='d-flex pe-4'>
@@ -40,7 +51,8 @@ const Navbar = () => {
                             :
                             <div className='d-flex pe-4'>
                                 <div className="btn bg-white text-success mx-2 fw-semibold" onClick={logout}>Log Out</div>
-                                <Avatar alt="swadesh" src="" />
+                                <Link className="btn bg-white text-success mx-2 fw-semibold" to={'/aboutuser'}  >user Details</Link>
+                                {/* <Avatar alt="swadesh" src="" /> */}
                             </div>
                         }
 

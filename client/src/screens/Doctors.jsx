@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../components/Card'
 
-
-
 const Doctors = () => {
     const [doctorsLi, setdoctorsLi] = useState([])
     const DoctorsList = async () => {
@@ -21,9 +19,9 @@ const Doctors = () => {
             <h1 className='text-center text-capitalize my-5'>Meet our best doctors</h1>
             <div className="row">
                 {doctorsLi !== [] ? doctorsLi.map((val) => {
-                    console.log(val)
+            
                     return (
-                        <div className='col-12 col-md-6 col-lg-4 col-xl-3 mb-5' >
+                        <div className='col-12 col-md-6 col-lg-4 col-xl-3 mb-5' key={val._id} >
                             <Card data={val} />
                         </div>
                     )

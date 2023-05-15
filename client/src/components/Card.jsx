@@ -1,7 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import { useCart, useDispatch } from "./contextReducer"
 
 const Card = (props) => {
-    const { name, email, phone, degree, specialist, experience, age, time } = props.data;
+    const { _id,name, email, phone, degree, specialist, experience, age, time,fee } = props.data;
+    const dispatch = useDispatch();
+    const handonadd = async () => {
+        await dispatch({ type: "ADD", _id, name, phone, specialist,fee, date: new Date().toLocaleString().slice(0, 9)  })
+    }
     return (
         <>
             <div className="card" style={{ width: "18rem" }}>
@@ -15,7 +21,7 @@ const Card = (props) => {
                     <p className="card-text ">Visiting Time: {time} </p>
                     <p className="card-text">Email: {email} </p>
                     <p className="card-text">Phone No: {phone} </p>
-                    <a href="#" className="btn btn-primary">Book Now</a>
+                    <Link onClick={handonadd}  className="btn btn-primary" to={"/book"}>Book Now</Link>
                 </div>
             </div>
         </>
